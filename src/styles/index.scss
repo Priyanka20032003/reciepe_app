@@ -24,10 +24,12 @@ a {
 body {
   font-size: var(--font-size);
   font-family: "Roboto", sans-serif;
+  padding-top: 55px;
+
 }
 
 .container {
-  padding-inline: 15vw;
+  padding-inline: 20vw;
 }
 .btn{
   border: none;
@@ -73,77 +75,157 @@ img{
 }
 .section{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 3vw;
   .col{
     width: 50%;
-    .title{
-      color: var(--text-color);
-      font-size: 3em;
-      margin-bottom: 0.25em;
-    }
-    .info{
-      color: var(--text-light);
-      font-size: 1em;
-      margin-bottom:1.25em ;
-      letter-spacing: 1px;
-      line-height: 1.3em;
+  }
+  .title{
+    color: var(--text-color);
+    font-size: 2.5em;
+    margin-bottom: 0.25em;
+    font-weight: 900;
+  }
+  .info{
+    color: var(--text-light);
+    font-size: 1em;
+    margin-bottom:1.25em ;
+    letter-spacing: 1px;
+    line-height: 1.3em;
 
 
-    }
   }
 
 }
+@import './partials/heroSection.scss';
+@import './partials/improve-section.scss';
+@import './partials/quoteSection.scss';
+@import './partials/cheifSection.scss';
+@import './partials/footerSection.scss';
 
-.section.hero{
-  .typography{
-    padding-right: 1em;
+.previous-searches{
+  display: block;
+  h2{
+    color: var(--text-color);
+    margin-bottom: 0.5em;
   }
-  .gallery{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1.75vw;
-    .custom-image{
-      transform: scale(0);
+  .previous-searches-container{
+    .search-item{
+      background-color: var(--primary-color);
+      display: inline-block;
+      padding: 0.5em 1em;
+      margin: 0 1em 1em 0;
+      color: #fff;
+      border-radius: 30px;
+      box-shadow: 0 3px 6px var(--shadow-color);
+      transform: translateX(100%);
       opacity: 0;
-      border-radius: 3px;
-      overflow: hidden;
-      animation: getAnimationDuration(0.3s) popOut forwards;
-      &:nth-child(2){
-        animation-delay: 0.1s;
-
-      }
-      &:nth-child(3){
-        animation-delay: 0.2s;
-
-      }
-      &:nth-child(6){
-        animation-delay: 0.3s;
-
-      }
-
-      &:nth-child(9){
-        animation-delay: 0.4s;
-
-      }
-      &:nth-child(8){
-        animation-delay: 0.5s;
-
-      }
-      &:nth-child(7){
-        animation-delay: 0.6s;
-
-      }
-      &:nth-child(4){
-        animation-delay: 0.7s;
-
-      }
-      &:nth-child(5){
-        animation-delay: 0.8s;
-
-      }
+      animation: getAnimationDuration(.5s) slideInRight forwards;
     }
+  }
+  .search-box{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 30px;
+    input, .btn{
+      height: 30px;
+    }
+    input{
+      min-width: 250px;
+      padding: 0 0.5em;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      border: 1px solid #4d4d4d;
 
+    }
+    .btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 0.75em;
+      border-radius: 0 5px 5px 0;
 
+    }
   }
 }
 
+
+@media all and (max-width:1280px){
+  .container{
+    padding-inline: 18vw;
+  }
+
+
+}
+@media all and (max-width:1050px){
+  .container{
+    padding-inline: 12vw;
+  }
+
+
+}
+
+@media all and (max-width:768px){
+  .container{
+    padding-inline: 6vw;
+  }
+ 
+
+  .navbar{
+    .nav-links{
+      display: none;
+  }
+  .sidebar-btn{
+      display: block;
+  }
+
+  }
+  .cheif-card{
+    box-shadow: 0 5px 10px var(--shadow-color);
+
+  }
+  .section{
+    .col{
+      width: 100%;
+      padding: 0 !important;
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
+  .skill-item{
+    display:inline-block ;
+    margin: .75em;
+    margin-bottom: 1em;
+
+  }
+  .section.improve-skills .btn{
+    display: block;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+  }
+  .footer{
+    grid-template-columns: repeat(4,1fr);
+    .footer-section:nth-child(1){
+      grid-column: span 4;
+
+
+    }
+    .footer-section:nth-child(2), .footer-section:nth-child(3) {
+      grid-column: span 2;
+
+
+    }
+  }
+    
+    
+}
+@media all and (max-width:480px){
+  .container{
+    padding-inline: 3vw;
+  }
+
+
+}
